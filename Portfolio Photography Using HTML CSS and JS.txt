@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.hero-section {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0f0f0f;
+}
+.hero-logo {
+  position: fixed;
+  margin: 2em;
+  color: white;
+  font-family: "Cosi Azure";
+  font-style: 16px;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+.menu-toggle {
+  position: fixed;
+  right: 0;
+  margin: 2em;
+  color: white;
+  z-index: 1;
+}
+.menu-toggle ion-icon {
+  font-style: 16px;
+}
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #0f0f0f;
+  z-index: 1;
+  opacity: 0;
+}
+.overlay ion-icon {
+  position: fixed;
+  right: 0;
+  margin: 2em;
+  color: white;
+}
+.overlay ul {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+}
+.overlay ul li {
+  font-size: 84px;
+}
+@media (max-width: 900px) {
+  .overlay ul li {
+    font-size: 30px;
+    padding: 10px 0;
+  }
+}
+.overlay ul li a {
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  font-family: "Times New Roman";
+  text-transform: uppercase !important;
+}
+.overlay ul li a:hover {
+  text-decoration: none;
+  color: white;
+}
+.media {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 25px;
+  margin: 2em;
+  z-index: 2;
+}
+.media ul {
+  list-style: none;
+}
+.media ul li {
+  padding: 10px 0;
+}
+.media ul li a {
+  color: #fff;
+}
+.hero-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+}
+.hero-img img {
+  width: 100%;
+}
+.hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.hero-title h1 {
+  font-size: 80px;
+  font-weight: lighter;
+  text-transform: uppercase !important;
+  color: white;
+}
+@media (max-width: 900px) {
+  .hero-title .letter {
+    font-size: 24px !important;
+  }
+}
+.hero-title .letter {
+  display: inline-block;
+  opacity: 0;
+  font-size: 80px;
+  color: white;
+  font-family: "Times New Roman";
+  text-transform: uppercase !important;
+}
+.about-section {
+  padding: 120px 0;
+}
+.about-section h1 {
+  font-size: 84px;
+  font-family: "Times New Roman";
+  text-transform: uppercase;
+}
+.about-section h3 {
+  font-family: Helvetica;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.about-link {
+  margin: 50px 0; 
+}
+.about-link a {
+  color: black;
+  padding: 18px 36px;
+  border-radius: 20px;
+  border: 1px solid black;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+.about-link a:hover {
+  text-decoration: none;
+  color: white;
+  background: black;
+}
+.project-section {
+  background: #0f0f0f;
+  padding-top: 120px;
+  overflow: hidden;
+}
+.project-section h1 {
+  font-size: 84px;
+  font-family: "Times New Roman";
+  text-transform: uppercase;
+  color: white;
+}
+.project-section p {
+  color: grey;
+  width: 100%;
+}
+.project-heading {
+  margin-bottom: 120px;
+}
+.project-section ion-icon {
+  color: white;
+  font-size: 148px;
+}
+.project-img {
+  width: 100%;
+  object-fit: cover;
+  height: 100vh;
+}
+.project {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.social-media {
+  padding: 0 0;
+  margin-top: 120px;
+}
+.social-media h1 {
+  font-size: 80px;
+  font-family: "Times New Roman";
+  text-transform: uppercase;
+}
+.social-media h3 {
+  padding: 8px 0;
+  margin-bottom: 20px;
+}
+.social-icons {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.social-icons ul {
+  margin: 80px 0 !important;
+  padding: 0 !important;
+}
+.social-icons ul li {
+  display: inline-block;
+  list-style: none;
+  padding-right: 40px;
+}
+.social-icons ul li a {
+  color: black;
+}
+    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>PORTFOLIO PHOTOGRAPHER</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> <!-- ANIMEJS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script> <!-- JQUERY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>  <!-- GSAP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/> <!-- BOOTSTRAP -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> <!-- BOOTSTRAP -->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>     <!-- IONICONS -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css"/> <!-- SCROLL REVEAL ANIMATIONS -->
+  <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.0.2/dist/simpleParallax.min.js"></script>    <!-- SIMPLE PARALLAX -->
+</head>
+<body>
+<a name="home"></a>
+<div class="wrapper">
+<section class="hero-section">
+<div class="hero-logo">PhotoGrapher</div>
+<div class="menu-toggle">
+ <ion-icon name="menu"></ion-icon>
+</div>
+<div class="media">
+<ul>
+ <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+ <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+ <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+</ul>
+</div>
+<div class="hero-img">
+ <img src="Cillian Murphy.jpg" class="hero-img-parallax" />
+</div>
+<div class="hero-title">
+ <h1>Cillian  Murphy</h1>
+</div>
+<div class="overlay">
+<div class="close-btn">
+ <ion-icon name="close"></ion-icon>
+</div>
+<div class="menu">
+<ul>
+ <li><a href="#home">Home</a></li>
+ <li><a href="#about">About Us</a></li>
+ <li><a href="#projects">Moment</a></li>
+ <li><a href="#contact">Contact Us</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<a name="about"></a>
+<section class="about-section">
+<div class="container">
+<div class="row">
+<div class="about-heading col-lg-6">
+ <h1 class="wow fadeInUp" data-wow-delay="0.2s">About Us</h1>
+</div>
+<div class="about-content col-lg-6">
+ <h3 class="wow fadeInUp" data-wow-delay="0.3s">
+  "Capturing Life's Masterpieces, One Frame at a Time"</h3>
+<p class="wow fadeInUp" data-wow-delay="0.4s">
+   Photographers view their craft as a way to express creativity and capture fleeting moments. 
+   They balance technical mastery with a deep appreciation for observing and preserving the world.</p>
+<p class="wow fadeInUp" data-wow-delay="0.5s">       
+   Photography captures moments through light and composition.Key elements include exposure (aperture, 
+   shutter speed, ISO), composition techniques (like the rule of thirds), 
+   and lighting. Equipment ranges from basic cameras to advanced gear, 
+   and post-processing can enhance images. Different genres, such as portrait, landscape, and street photography, offer various styles and techniques.
+</p>
+<div class="about-link wow fadeInUp" data-wow-delay="0.6s">
+ <a href="#contact">MORE INFO...</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<a name="projects"></a>
+<section class="project-section">
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<div class="project-heading col-lg-6">
+  <h1 class="wow fadeInUp" data-wow-delay="0.3s">MOMENT CAPTURES</h1>
+  <p class="wow fadeInUp" data-wow-delay="0.4s">
+   "Life's Awkward Moments, Captured Perfectly"</p>
+</div>
+</div>
+</div>
+<div class="projects">
+<div class="row project-row">
+<div class="project project-1 col-lg-6">
+  <img src="project-1.jpg" class="project-1-img project-img img-responsive fit-image"/>
+</div>
+<div class="project project-2 col-lg-6">
+  <img src="project-2.jpg" class="project-2-img project-img img-responsive fit-image"/>
+</div>
+</div>
+<div class="row project-row">
+<div class="project project-3 col-lg-6">
+  <img src="project-3.jpg" class="project-3-img project-img img-responsive fit-image"/>
+</div>
+<div class="project project-4 col-lg-6">
+  <img src="project-4.jpg" class="project-4-img project-img img-responsive fit-image"/>
+</div>
+</div>
+<div class="row project-row">
+<div class="project project-5 col-lg-6">
+  <img src="project-5.jpg" class="project-5-img project-img img-responsive fit-image"/>
+</div>
+<div class="project project-6 col-lg-6">
+  <img src="project-6.jpg" class="project-6-img project-img img-responsive fit-image"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<a name="contact"></a>
+<section class="social-media">
+<div class="container">
+<div class="row">
+<div class="sm-heading col-lg-6">
+  <h1 class="wow fadeInUp" data-wow-delay="0.2s">Contact Us</h1>
+</div>
+<div class="sm-content col-lg-6">
+  <h3 class="wow fadeInUp" data-wow-delay="0.4s">photography@gmail.com</h3>
+  <p class="wow fadeInUp" data-wow-delay="0.5s">
+   CONTACT NO :- +91-4321-7896-89 <BR>
+   ADDRESS :- Plot-34 , Petrol Pump near bank , PUNE [INDIA]
+  </p>
+  <p class="wow fadeInUp" data-wow-delay="0.6s">
+   Privacy Policy  <span> &nbsp;&nbsp;&nbsp;&nbsp; </span> Terms & Conditions <br>
+   Cookie Policy  <span> &nbsp;&nbsp;&nbsp;&nbsp; </span> FAQ <br>
+   Our Blog   <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> Reviews  <br>
+   Newsletter  <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> Press & Updates <br>
+  </p>
+</div>
+</div>
+<div class="col-lg-12 text-left">
+<div class="social-icons">
+<ul>
+  <li class="wow fadeInUp" data-wow-delay="0.7s"><a href="#">Facebook</a></li>
+  <li class="wow fadeInUp" data-wow-delay="0.8s"><a href="#">Instagram</a></li>
+  <li class="wow fadeInUp" data-wow-delay="0.9s"><a href="#">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</div>
+    <script src="script.js">
+        new WOW().init();
+
+var textWrapper = document.querySelector(".hero-title");
+textWrapper.innerHTML = textWrapper.textContent.replace(
+  /\S/g,
+  "<span class='letter'>$&</span>"
+);
+$(document).ready(function() {
+  anime.timeline({ loop: false }).add({
+    targets: ".hero-title .letter",
+    translateY: [120, 0],
+    translateZ: 0,
+    opacity: [0, 1],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: (el, i) => 2000 + 40 * i
+  });
+});
+var t1 = new TimelineMax({ paused: true });
+TweenMax.from(".hero-logo", 2, {
+  y: 20,
+  opacity: 0,
+  ease: Expo.easeInOut,
+  delay: 1
+});
+TweenMax.from(".menu-toggle", 2, {
+  y: 20,
+  opacity: 0,
+  ease: Expo.easeInOut,
+  delay: 1.2
+});
+TweenMax.from(".view-photos", 2, {
+  y: 20,
+  opacity: 0,
+  ease: Expo.easeInOut,
+  delay: 1.4
+});
+TweenMax.staggerFrom(
+  ".media ul li",
+  2,
+  {
+    y: 20,
+    opacity: 0,
+    ease: Expo.easeInOut,
+    delay: 1.6
+  },
+  0.1
+);
+t1.to(".overlay", 1, {
+  opacity: 1,
+  ease: Expo.easeInOut
+});
+t1.to(".view-photos, .media", 1, {
+  opacity: 0,
+  ease: Expo.easeInOut
+});
+t1.staggerFrom(
+  ".menu ul li",
+  1,
+  { y: 100, opacity: 0, ease: Expo.easeOut },
+  0.1
+);
+t1.reverse();
+$(document).on("click", ".menu-toggle", function() {
+  t1.reversed(!t1.reversed());
+});
+$(document).on("click", ".close-btn", function() {
+  t1.reversed(!t1.reversed());
+});
+t1.reverse();
+$(document).on("click", "li", function() {
+  t1.reversed(!t1.reversed());
+});
+var image = document.getElementsByClassName("hero-img-parallax");
+new simpleParallax(image, {
+  scale: 1.6
+});
+var image = document.getElementsByClassName("project-1-img");
+new simpleParallax(image, {
+  scale: 1.6
+});
+var image = document.getElementsByClassName("project-2-img");
+new simpleParallax(image, {
+  scale: 1.6
+});
+var image = document.getElementsByClassName("project-3-img");
+new simpleParallax(image, {
+  scale: 1.6
+});
+var image = document.getElementsByClassName("project-4-img");
+new simpleParallax(image, {
+  scale: 1.6
+});
+var image = document.getElementsByClassName("project-5-img");
+new simpleParallax(image, {
+  scale: 1.6
+});
+var image = document.getElementsByClassName("project-6-img");
+new simpleParallax(image, {
+  scale: 1.6
+});
+    </script>
+</body>
+</html>
